@@ -1,0 +1,65 @@
+.container-create {
+    width: 170vh;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #fefefe, #fefefe, #fefefe);
+    background-size: 400% 400%;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 7px 7px 10px 5px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+ }
+
+ h1 {
+
+   font-size: 6vh;
+    text-shadow: none;
+
+ }
+
+ .navcreate1 {
+
+ margin: auto;
+ padding: 5vh;
+
+ }
+
+.navcreate1 h2 {
+
+text-shadow: none;
+font-size: 5vh;
+padding: 1vh;
+
+}
+
+.navcreate1 h3 {
+
+text-shadow: none;
+font-size: 3.5vh;
+padding: 1vh;
+}
+
+
+ .navcreate1 .texttitulo textarea {
+
+ height: 7vh;
+ width: 100vh;
+ font-size: 5vh;
+ text-shadow: none;
+ 
+
+ }
+
+.textblog {
+
+margin: 0 0 2vh;
+
+}
+
+.navcreate1 button {
+
+font-size: 30px;
+border-radius: 1px solid;
+padding: 0.5vh;
+
+
+}

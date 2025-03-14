@@ -1,0 +1,10 @@
+.ql-editor {
+
+min-height: 500px;
+
+}
+
+.ql-editor img {
+    width: auto; /* Usso ajusta a largura máxima */
+    height: 500px;    /* Optei por manter a proporção */
+  }

@@ -1,0 +1,111 @@
+.container-initial {
+    width: 150vh;
+    height: 100vh;
+    background: linear-gradient(45deg, #0B60B0, rgb(0, 0, 0), #0B60B0);
+    background-size: 400% 400%;
+    animation: neon-gradient 10s ease infinite;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 7px 7px 10px 5px rgba(0, 0, 0, 0.5);
+    
+ }
+
+ @keyframes neon-gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+ .container-initial .nav1 {
+ 
+   margin: 0 10vh 30vh 0;
+   display: flex;
+
+ }
+
+ .container-initial .nav1 p{
+
+ color: #fff;
+ font-size: 25px;
+ 
+
+ }
+
+ .container-initial .nav1 img {
+ 
+  height: auto;
+  width: 5vh;
+  transform: translate(2vh,-1vh);
+  
+ }
+
+ .container-initial .nav1 a{
+
+   color: #fff;
+   text-decoration: none;
+   transform: translateX(105vh);
+   font-size: 25px;
+   }
+
+.nav1 a:hover{
+
+  text-shadow: 
+        0 0 5px #024a5c,
+        0 0 10px #024a5c,
+        0 0 15px   #024a5c;
+        
+       
+ color: #40A2D8;
+ 
+}
+
+.container-initial .center-nav {
+
+color: #fff;
+width: 100vh;
+transform: translateX(10vh);
+text-align: center;
+}
+
+.center-nav h2{
+   
+font-size: 40px;   
+
+}
+
+.center-nav p{
+   
+font-size: 30px;   
+margin: 0 7vh 7vh 7vh;
+}
+
+.center-nav  a{
+   
+font-size: 25px;
+margin-inline: 20px;
+border: 2px solid #fff;
+padding: 10px;
+background-color: #fff;
+color: #000;
+text-decoration: none;
+text-shadow: none;
+}
+
+.center-nav  a:hover{
+   
+  border: 2px solid #40A2D8;
+  background:  transparent;
+  color: #40A2D8;
+  box-shadow: 
+      0 0 15px #024a5c,
+      0 0 30px #024a5c,
+      0 0 45px #024a5c;
+
+     
+}
