@@ -7,7 +7,7 @@ import "./Editor.css";
 
 
 
-const Blog = () => {
+const Blog = ({user}) => {
 
   const [content, setContent] = useState("");
 
@@ -19,9 +19,9 @@ const Blog = () => {
 
     <h1>Crie seu Blog</h1>
 
-   
-    
-    <div className="navcreate1">
+    { user ? (
+     
+<div className="navcreate1">
          
          <h2>Seu Titulo</h2>
          <div className="texttitulo">
@@ -43,6 +43,12 @@ const Blog = () => {
 
     </div>
 
+    ) : (
+
+    <p>VOCÊ PRECISAR SE LOGAR PARA ESCREVER NO BLOG</p>
+
+
+    )}
 
   </div>
 

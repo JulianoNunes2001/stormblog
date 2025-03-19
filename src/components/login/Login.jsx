@@ -1,58 +1,63 @@
-import React from "react";
-import { FaUser, FaLock } from "react-icons/fa";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; 
 import "./Login.css";
-import Register from '../register/Register';
-
+import Google from "./Google";
 
 const Login = () => {
 
-  const [userName, setUsername] = useState("");
-  const [password, setPassword] = useState("");
- 
-  const handleSubmit = (event) =>{
-    event.preventDefault();
+const [user, setUser] = useState(null);
+const navigate = useNavigate(); 
 
-    alert("Login criado com sucesso!");
-   
-    console.log("Login:"+ userName +" senha "+ password);
-  };
+// Verifica se já tem um usuário salvo no localStorage ao carregar a página
+useEffect(() => {
+   const storedUser = localStorage.getItem("user");
+   if (storedUser) {
+     setUser(JSON.parse(storedUser));
+   }
+ }, []);
+
+// Armazenar para persistir o Login
+
+const handleLogin = (userData) => {
+   setUser(userData);
+   localStorage.setItem("user", JSON.stringify(userData));
+   navigate("/blog"); // Redireciona para o Blog após login
+ };
+
+ const handleLogout = () => {
+   localStorage.removeItem("user");
+   setUser(null);
+   navigate("/"); // Redireciona para login
+ };
     
    return (
 
-   <div className="container">
+   <div className="container-register">
+      <h1>Login</h1>
+      <form >
+         <div className="icons-register">
+            <Google setUser={handleLogin} />         
+         </div>  
+                         
+      </form>
 
-    <form onSubmit={handleSubmit}>
-      <h1>Acesse o Sistema</h1>
-      <div className="input-field">
-      <input type="email" placeholder="E-mail" onChange={(e) => setUsername(e.target.value)}/>
-      <FaUser className="icons"/>
-      </div>
-      <div className="input-field">
-      <input type="password" placeholder="Senha" onChange={(e) => setPassword(e.target.value)}/>
-      <FaLock className="icons"/>         
-      </div>
-      <div className="recall-forget">
-        <label >
-          <input type="checkbox" />
-          Salvar login?
-        </label>
-        <a href="#">Esqueceu a senha?</a>
-      </div>
-      <button>Entrar</button>
+      { user && (
 
-      <div className="signup-link">
-        <p>Não tem uma conta?</p>
-        <a href='../register/Register'>Registrar</a>
-      </div>
-    </form>
-   
+       <div className="user-info">
+         <img src={user.photoURL} alt="User" className="user-img" />
+         <p>Usuario: {user.name}</p>
+         <p>Email: {user.email}</p>
+         <button onClick={handleLogout}>Sair</button>
+       </div>
+
+      )
+
+
+      }
+
    </div>
 
-
    )
-
-
 
 }
 
